@@ -1,0 +1,36 @@
+/*
+ENUNCIADOS:
+1) Crie um array de 7 posições chamado alturas e instancie seus valores a partir de leituras do teclado. 
+Após, chame uma função chamada mediaAltura() que recebe esse array como parâmetro e retorna a média das alturas contidas 
+nesse array.
+
+2) Crie um array chamado numeros contendo 8 posições, com valores lidos pelo teclado. 
+Após, crie uma função chamada checaImpar() e passe esse array como parâmetro. 
+Sua função checaImpar() deverá imprimir a quantidade de números ímpares contidos neste array.
+*/
+
+import java.util.Scanner;
+
+public class treinoArrays{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        
+        double[] listaDeAlturas = new double[7];
+        System.out.println("Quais alturas você gistaria de adicionar à lista?");
+        //double alturas = scan.nextDouble();
+            for (int i = 0; i < listaDeAlturas.length; i++){
+                System.out.println("Insira uma altura");
+                    listaDeAlturas[i] = scan.nextDouble();
+            }
+            
+            System.out.println(listaDeAlturas[3]);
+
+        
+    }
+    
+ //   public static double mediaAlturas(double alturas[]){
+        
+        
+   //}
+    
+}

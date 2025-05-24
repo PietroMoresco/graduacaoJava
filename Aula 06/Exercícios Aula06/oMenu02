@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class exercicioMenu{
+
+    public static String calculadora(){
+        System.out.println("Olá, sou uma calculadora. Informe-me dois números inteiros com os quais você gostaria de trabalhar. \nQual será o primeiro número?");
+            scanner scan = new Scanner(System.in);
+            num1 = scan nextInt();
+        System.out.println("E qual será o segundo número?");
+            num2 = scan nextInt();
+        
+        System.out.println("Qual operação deseja fazer?\n");
+            System.out.println("1 - Adição");
+            System.out.println("2 - Subtração");
+            System.out.println("3 - Divisão");
+            System.out.println("4 - Multiplicação");
+            System.out.println("5 - Módulo");
+            System.out.println("6 - Exponenciação");
+            System.out.println("\n9 - Sair");
+    }
+
+    public static void Adicao(){
+        System.out.println(num1 + num2);
+    }
+
+    public static void Subtracao(){
+        System.out.println(num1 - num2);
+    }
+
+    public static void Divisao(){
+        System.out.println(num1 / num2);
+    }
+
+    public static void Multiplicacao(){
+        System.out.println(num1 * num2);
+    }
+
+    public static void Modulo(){
+        System.out.println(num1 % num2);
+    }
+
+    public static void Exponenciacao(){
+        System.out.println(Math.pow(num1,num2));
+    }
+
+        //MAIN
+        public static void main(String[] args){
+
+        String opcao = 0;
+         while (opcao != 9){
+            opcao = calculadora();
+
+            if (opcao.equals("1")){
+                Adicao();
+        } else if (opcao.equals("2")){
+                Subtracao()
+        } else if (opcao.equals("3")){
+            Divisao()
+        } else if (opcao.equals("4")){
+            Multiplicacao()
+        } else if (opcao.equals("5")){
+            Modulo()
+        } else if (opcap.equals("6")){
+            Exponenciacao() 
+        } else if (opcao.equals("9")){
+            System.out.println("Adeus...");
+                break;
+        } else {System.out.println("Opcão inválida...");
+        }
+
+        
+   }
+
+
+    }
+}

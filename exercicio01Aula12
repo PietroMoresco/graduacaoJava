@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class exercicio01Aula12{
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+
+        double[] alturas = new double[7];
+        System.out.println("Informe as 7 alturas");
+       for (int i = 0; i < alturas.length; i++) {
+           System.out.println("Digite o nome do aluno no índice " + i);
+           alturas[i] = scan.nextDouble();
+       }
+
+
+    }
+
+    //public static double mediaAltura(){
+        //return 
+    //}
+
+}

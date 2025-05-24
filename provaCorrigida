@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+public class ProvaGA_prof {
+    
+    public static void main(String[] args) {
+       
+       String opcao = "0"; // Inicializo minha variável com um valor inexistente nas opções
+       int qtDevJr = 0;
+       int qtDevPl = 0;
+       int qtDevSr = 0;
+       int qtDevEsp = 0;
+       
+       while (opcao != "9") {
+           opcao = menu();
+           
+           // Agora itera sobre as opções possíveis
+           if (opcao.equals("1")) {
+               qtDevJr = insereDev(1); 
+           } else if (opcao.equals("2")) {
+               qtDevPl = insereDev(2);
+           } else if (opcao.equals("3")) {
+               qtDevSr = insereDev(3);
+           } else if (opcao.equals("4")) {
+               qtDevEsp = insereDev(4);
+           } else if (opcao.equals("5")) {
+               if (qtDevJr > 0 || qtDevPl > 0 || qtDevSr > 0 || qtDevEsp > 0) {
+                   calculaOrcamento(qtDevJr, qtDevPl, qtDevSr, qtDevEsp);   
+               } else {
+                   System.out.println("Você precisa adicionar algum dev antes.");    
+               }
+           } else if (opcao.equals("9")) {
+               System.out.println("A FakeIT agradece sua visita!");
+               break; // Usamos o break para sair do while e acabar nosso programa
+           } else {
+               System.out.println("Opcao invalida");
+           }
+       }
+    }
+    
+    public static String menu() {
+        // Display do menu
+        System.out.println("MENU");
+        System.out.println("1 – Adicionar dev. Jr. – Valor hora: R$ 30");
+        System.out.println("2 – Adicionar dev. Pl. – Valor hora: R$ 50");
+        System.out.println("3 – Adicionar dev. Sr. – Valor hora: R$ 70");
+        System.out.println("4 – Adicionar dev. Esp. – Valor hora: R$ 100");
+        System.out.println("5 - Fazer orçamento");
+        System.out.println("9 – Sair");
+        
+        // Agora pede pro usuário digitar a opção desejada
+        Scanner escolha = new Scanner(System.in);
+        String item = escolha.next(); 
+        
+        // Retorna o valor selecionado pelo usuário para a função main
+        return item;        
+    }
+    
+    // Recebe a opção selecionada pelo usuário como parâmetro
+    // e com base nisso, pede que o usuário digite a qt de devs desse tipo
+    public static int insereDev(int tipoDev) {
+        Scanner scan = new Scanner(System.in);
+        if (tipoDev == 1) {
+            System.out.println("Digite quantos devs Jr. quer no seu time: ");
+            return scan.nextInt();
+        } else if (tipoDev == 2) {
+            System.out.println("Digite quantos devs Pl. quer no seu time: ");
+            return scan.nextInt();
+        } else if (tipoDev == 3) {
+            System.out.println("Digite quantos devs Sr. quer no seu time: ");
+            return scan.nextInt();
+        } else if (tipoDev == 4) {
+            System.out.println("Digite quantos devs Esp. quer no seu time: ");
+            return scan.nextInt();
+        } else {
+            return 0;
+        }
+    }
+    
+    public static void calculaOrcamento(int qtDevJr, int qtDevPl, int qtDevSr, int qtDevEsp) {
+        int valorCliente = 0;
+        int lucroTotal = 0;
+        
+        valorCliente = (qtDevJr * 45 * 160) + (qtDevPl * 75 * 160) + (qtDevSr * 140 *160) + (qtDevEsp * 250 * 160);
+        lucroTotal = valorCliente - (qtDevJr * 30 * 160) + (qtDevPl * 50 * 160) + (qtDevSr * 70 *160) + (qtDevEsp * 100 * 160);
+        System.out.println("Valor cliente: R$" + valorCliente);
+        System.out.println("Lucro para FakeIT: R$" + lucroTotal);
+    }
+}
